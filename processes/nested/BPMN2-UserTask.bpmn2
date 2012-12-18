@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_7DFn0EhfEeKMx9jUvDFCLA" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd" expressionLanguage="http://www.mvel.org/2.0" targetNamespace="http://www.omg.org/bpmn20" typeLanguage="http://www.java.com/javaTypes">
+  <bpmn2:process id="UserTask" drools:packageName="/defaultPackage/" name="User Task" isExecutable="true">
+    <bpmn2:startEvent id="_1" drools:bgcolor="#9acd32" drools:selectable="true" name="StartProcess">
+      <bpmn2:outgoing>_1-_2</bpmn2:outgoing>
+    </bpmn2:startEvent>
+    <bpmn2:userTask id="_2" drools:selectable="true" drools:taskName="maciek" drools:scriptFormat="http://www.java.com/java" name="Hello VFS">
+      <bpmn2:incoming>_1-_2</bpmn2:incoming>
+      <bpmn2:outgoing>_2-_3</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_7DGO4EhfEeKMx9jUvDFCLA">
+        <bpmn2:dataInput id="_2_TaskNameInput" name="TaskName"/>
+        <bpmn2:inputSet id="_7DGO4UhfEeKMx9jUvDFCLA"/>
+        <bpmn2:outputSet id="_7DGO4khfEeKMx9jUvDFCLA"/>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_7DGO40hfEeKMx9jUvDFCLA">
+        <bpmn2:targetRef>_2_TaskNameInput</bpmn2:targetRef>
+        <bpmn2:assignment id="_7DGO5EhfEeKMx9jUvDFCLA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_7DGO5UhfEeKMx9jUvDFCLA">maciek</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_7DGO5khfEeKMx9jUvDFCLA">_2_TaskNameInput</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:potentialOwner id="_7DGO50hfEeKMx9jUvDFCLA">
+        <bpmn2:resourceAssignmentExpression id="_7DGO6EhfEeKMx9jUvDFCLA">
+          <bpmn2:formalExpression id="_7DGO6UhfEeKMx9jUvDFCLA">john</bpmn2:formalExpression>
+        </bpmn2:resourceAssignmentExpression>
+      </bpmn2:potentialOwner>
+    </bpmn2:userTask>
+    <bpmn2:endEvent id="_3" drools:bgcolor="#ff6347" drools:selectable="true" name="EndProcess">
+      <bpmn2:incoming>_2-_3</bpmn2:incoming>
+      <bpmn2:terminateEventDefinition id="_7DGO6khfEeKMx9jUvDFCLA"/>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="_1-_2" drools:bgcolor="#000000" drools:selectable="true" sourceRef="_1" targetRef="_2"/>
+    <bpmn2:sequenceFlow id="_2-_3" drools:bgcolor="#000000" drools:selectable="true" sourceRef="_2" targetRef="_3"/>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram id="_7DGO60hfEeKMx9jUvDFCLA">
+    <bpmndi:BPMNPlane id="_7DGO7EhfEeKMx9jUvDFCLA" bpmnElement="UserTask">
+      <bpmndi:BPMNShape id="_7DG18EhfEeKMx9jUvDFCLA" bpmnElement="_1">
+        <dc:Bounds height="30.0" width="30.0" x="165.0" y="204.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_7DG18UhfEeKMx9jUvDFCLA" bpmnElement="_2">
+        <dc:Bounds height="48.0" width="100.0" x="236.0" y="195.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_7DG18khfEeKMx9jUvDFCLA" bpmnElement="_3">
+        <dc:Bounds height="28.0" width="28.0" x="376.0" y="203.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="_7DG180hfEeKMx9jUvDFCLA" bpmnElement="_1-_2">
+        <di:waypoint xsi:type="dc:Point" x="180.0" y="219.0"/>
+        <di:waypoint xsi:type="dc:Point" x="286.0" y="219.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="_7DG19EhfEeKMx9jUvDFCLA" bpmnElement="_2-_3">
+        <di:waypoint xsi:type="dc:Point" x="286.0" y="219.0"/>
+        <di:waypoint xsi:type="dc:Point" x="390.0" y="217.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship id="_7DG19UhfEeKMx9jUvDFCLA" type="jBPMProcessSimulation">
+    <bpmn2:extensionElements>
+      <drools:ProcessAnalysisData>
+        <drools:Scenario xsi:type="drools:Scenario" id="default" name="Simulationscenario">
+          <drools:ScenarioParameters xsi:type="drools:ScenarioParameters_._type" baseTimeUnit="s"/>
+          <drools:ElementParameters xsi:type="drools:ElementParameters_._type" elementId="_1-_2" id="_7DG19khfEeKMx9jUvDFCLA">
+            <drools:ControlParameters xsi:type="drools:ControlParameters">
+              <drools:Probability xsi:type="drools:Parameter">
+                <drools:FloatingParameter value="100.0"/>
+              </drools:Probability>
+            </drools:ControlParameters>
+          </drools:ElementParameters>
+          <drools:ElementParameters xsi:type="drools:ElementParameters_._type" elementId="_2-_3" id="_7DG190hfEeKMx9jUvDFCLA">
+            <drools:ControlParameters xsi:type="drools:ControlParameters">
+              <drools:Probability xsi:type="drools:Parameter">
+                <drools:FloatingParameter value="100.0"/>
+              </drools:Probability>
+            </drools:ControlParameters>
+          </drools:ElementParameters>
+          <drools:ElementParameters xsi:type="drools:ElementParameters_._type" elementId="_3" id="_7DG1-EhfEeKMx9jUvDFCLA">
+            <drools:TimeParameters xsi:type="drools:TimeParameters">
+              <drools:ProcessingTime xsi:type="drools:Parameter">
+                <drools:RandomDistribution max="0.0" min="0.0"/>
+              </drools:ProcessingTime>
+              <drools:TimeUnit>ms</drools:TimeUnit>
+            </drools:TimeParameters>
+          </drools:ElementParameters>
+          <drools:ElementParameters xsi:type="drools:ElementParameters_._type" elementId="_1" id="_7DG1-UhfEeKMx9jUvDFCLA">
+            <drools:TimeParameters xsi:type="drools:TimeParameters">
+              <drools:WaitTime xsi:type="drools:Parameter">
+                <drools:FloatingParameter value="0.0"/>
+              </drools:WaitTime>
+              <drools:TimeUnit>ms</drools:TimeUnit>
+            </drools:TimeParameters>
+          </drools:ElementParameters>
+          <drools:ElementParameters xsi:type="drools:ElementParameters_._type" elementId="_2" id="_7DG1-khfEeKMx9jUvDFCLA">
+            <drools:TimeParameters xsi:type="drools:TimeParameters">
+              <drools:ProcessingTime xsi:type="drools:Parameter">
+                <drools:RandomDistribution max="0.0" min="0.0"/>
+              </drools:ProcessingTime>
+              <drools:TimeUnit>ms</drools:TimeUnit>
+            </drools:TimeParameters>
+            <drools:ResourceParameters xsi:type="drools:ResourceParameters">
+              <drools:Quantity xsi:type="drools:Parameter">
+                <drools:FloatingParameter value="0.0"/>
+              </drools:Quantity>
+              <drools:Workinghours xsi:type="drools:Parameter">
+                <drools:FloatingParameter value="8.0"/>
+              </drools:Workinghours>
+            </drools:ResourceParameters>
+            <drools:CostParameters xsi:type="drools:CostParameters">
+              <drools:UnitCost xsi:type="drools:Parameter">
+                <drools:DecimalParameter value="0"/>
+              </drools:UnitCost>
+            </drools:CostParameters>
+          </drools:ElementParameters>
+        </drools:Scenario>
+      </drools:ProcessAnalysisData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_7DFn0EhfEeKMx9jUvDFCLA</bpmn2:source>
+    <bpmn2:target>_7DFn0EhfEeKMx9jUvDFCLA</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>
